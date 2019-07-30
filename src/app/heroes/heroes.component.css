@@ -1,0 +1,11 @@
+.badge {
+  margin: 0;
+  color: #369;
+  font-size: 80%; }
+
+.selected {
+  background-color: cornsilk; }
+  .selected span {
+    background-color: aquamarine; }
+
+/*# sourceMappingURL=heroes.component.css.map */
