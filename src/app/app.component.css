@@ -20,4 +20,14 @@ body, input[type="text"], button {
 * {
   font-family: Arial, Helvetica, sans-serif; }
 
+.glenys {
+  width: 86px;
+  height: 90px;
+  background: url("/src/assets/images/glenys-battle.png") left center;
+  animation: play 0.8s steps(10); }
+
+@keyframes play {
+  100% {
+    background-position: -864px; } }
+
 /*# sourceMappingURL=app.component.css.map */

@@ -3,8 +3,13 @@
   <div><span>id: </span>{{hero.id}}</div>
   <div>
     <label>name:
-      <input [(ngModel)]="hero.name" placeholder="name"/>
+      <input (change)="save()" [(ngModel)]="hero.name" placeholder="name"/>
     </label>
   </div>
+  <div class="glenys"></div>
+
+  <button (click)="remove()">Remove Hero</button>
 </div>
+
+
 

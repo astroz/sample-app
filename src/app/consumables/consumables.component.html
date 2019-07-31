@@ -1,0 +1,7 @@
+<ul class="consumables">
+  <li *ngFor="let consumable of consumables"
+      [class.selected]="consumable === selectedConsumable" (click)="onSelect(consumable)">
+    <span class="badge">{{consumable.id}}</span> {{consumable.name}} {{consumable.imageSrc}}
+  </li>
+
+</ul>
