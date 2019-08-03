@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,EAAE;EACA,eAAe,EAAE,IAAI;EACrB,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,QAAQ,EAAE,MAAM;;AAElB,EAAE;EACA,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,GAAG;;AAEb,YAAY;EACV,KAAK,EAAE,IAAI;EACX,KAAK,EAAE,GAAG;;AAEZ,SAAS;EACP,gBAAgB,EAAE,QAAQ;EAC1B,OAAO,EAAE,aAAa",
+"sources": ["consumables.component.sass"],
 "names": [],
 "file": "consumables.component.css"
 }

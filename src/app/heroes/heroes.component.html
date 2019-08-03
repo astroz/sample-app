@@ -1,3 +1,5 @@
+<h2>Hero Selection</h2>
+
 <div>
   <button (click)="showOptions = !showOptions">Show Options</button>
   <div *ngIf="showOptions" class="options">
@@ -5,11 +7,18 @@
     <button (click)="clearHeroes()">Clear Heroes</button>
   </div>
 </div>
-
-<ul class="heroes">
-  <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
+<div class="half-screen">
+<ul class="heroes"  style="list-style: none">
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
+    <div class="hero-slot">
+      <figure [class.selected]="hero === selectedHero">
+        <div class="{{hero.type | lowercase}}"></div>
+        <figcaption>{{hero.name}}</figcaption>
+      </figure>
+    </div>
   </li>
 </ul>
-
+</div>
+<div class="half-screen">
 <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+</div>

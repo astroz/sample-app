@@ -5,6 +5,8 @@ import {MessageService} from './message.service';
 import {Hero} from './hero';
 import {HEROES} from './mock-heroes';
 import {Observable, of} from 'rxjs';
+import {Consumable} from './consumable';
+import {CONSUMABLES} from './consumables';
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +25,9 @@ export class HeroService {
 
   saveHeroes(heroes): void {
     localStorage.setItem('Heroes', JSON.stringify(heroes));
+  }
+
+  getConsumables(): Observable<Consumable[]> {
+    return of(CONSUMABLES);
   }
 }

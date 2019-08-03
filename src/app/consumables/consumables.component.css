@@ -1,3 +1,19 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; }
 
+li {
+  float: left;
+  margin: 2px; }
+
+.half-screen {
+  float: left;
+  width: 50%; }
+
+.selected {
+  background-color: cornsilk;
+  outline: 1px solid red; }
 
 /*# sourceMappingURL=consumables.component.css.map */

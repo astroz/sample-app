@@ -1,4 +1,12 @@
 export enum HeroType {
-  Lancer,
-  Fighter
+  Glenys = 'Glenys',
+  Hex = 'Hex',
+  Ley = 'Ley',
+  Linail = 'Linail',
+  Oratio = 'Oratio',
+  Ouzo = 'Ouzo',
+  Prime = 'Prime',
+  Wyvera = 'Wyvera'
 }
+
+
