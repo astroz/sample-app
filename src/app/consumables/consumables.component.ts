@@ -19,8 +19,13 @@ export class ConsumablesComponent implements OnInit {
       .subscribe(consumables => this.consumables = consumables);
   }
 
+  addConsumable(consumable: Consumable): void {
+    this.heroService.setSelectedConsumable(consumable);
+  }
+
   onSelect(consumable: Consumable): void {
     this.selectedConsumable = consumable;
+    this.heroService.setSelectedConsumable(consumable);
   }
 
   ngOnInit() {

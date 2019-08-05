@@ -1,61 +1,36 @@
-.badge {
-  margin: 0;
-  color: #369;
-  font-size: 80%; }
+/*
+Error: The line was indented 2 levels deeper than the previous line.
+        on line 23 of heroes.component.sass
 
-.selected {
-  background-color: cornsilk;
-  outline: 1px solid red; }
-  .selected span {
-    background-color: aquamarine; }
+18:   float:  left
+19:   width:  120px
+20:   height: 120px
+21: 
+22: figure
+23:     display: inline-block
+24:     border: 1px dotted gray
+25:     margin: 20px
+26: 
+27: figure img
+28:   vertical-align: top
 
-.half-screen {
-  float: left;
-  width: 50%; }
-
-.hero-slot {
-  float: left;
-  width: 120px;
-  height: 120px; }
-
-.character-animation, .glenys, .hex, .ley, .linail, .oratio, .ouzo, .prime, .wyvera {
-  width: 96px;
-  height: 96px;
-  animation: walk 0.75s 1s infinite steps(2) alternate; }
-
-.glenys {
-  background: url("/assets/images/glenys-battle.png") left top; }
-
-.hex {
-  background: url("/assets/images/hex-battle.png") left top; }
-
-.ley {
-  background: url("/assets/images/ley-battle.png") left top; }
-
-.linail {
-  background: url("/assets/images/linail-battle.png") left top; }
-
-.oratio {
-  background: url("/assets/images/oratio-battle.png") left top; }
-
-.ouzo {
-  background: url("/assets/images/ouzo-battle.png") left top; }
-
-.prime {
-  background: url("/assets/images/prime-battle.png") left top; }
-
-.wyvera {
-  background: url("/assets/images/wyvera-battle.png") left top; }
-
-@keyframes cheer {
-  from {
-    background-position-x: 384px; }
-  to {
-    background-position-x: 576px; } }
-@keyframes walk {
-  from {
-    background-position-x: 192px; }
-  to {
-    background-position-x: 384px; } }
-
-/*# sourceMappingURL=heroes.component.css.map */
+Backtrace:
+heroes.component.sass:23
+/Users/Omatic/.rvm/gems/ruby-2.2-head/gems/sass-3.4.13/lib/sass/engine.rb:509:in `tree'
+/Users/Omatic/.rvm/gems/ruby-2.2-head/gems/sass-3.4.13/lib/sass/engine.rb:396:in `_to_tree'
+/Users/Omatic/.rvm/gems/ruby-2.2-head/gems/sass-3.4.13/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/Users/Omatic/.rvm/gems/ruby-2.2-head/gems/sass-3.4.13/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/Users/Omatic/.rvm/gems/ruby-2.2-head/gems/sass-3.4.13/lib/sass/exec/sass_scss.rb:407:in `run'
+/Users/Omatic/.rvm/gems/ruby-2.2-head/gems/sass-3.4.13/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Users/Omatic/.rvm/gems/ruby-2.2-head/gems/sass-3.4.13/lib/sass/exec/base.rb:52:in `parse'
+/Users/Omatic/.rvm/gems/ruby-2.2-head/gems/sass-3.4.13/lib/sass/exec/base.rb:19:in `parse!'
+/Users/Omatic/.rvm/gems/ruby-2.2-head/gems/sass-3.4.13/bin/sass:13:in `<top (required)>'
+/Users/Omatic/.rvm/gems/ruby-2.2-head/bin/sass:22:in `load'
+/Users/Omatic/.rvm/gems/ruby-2.2-head/bin/sass:22:in `<main>'
+/Users/Omatic/.rvm/gems/ruby-2.2-head/bin/ruby_executable_hooks:15:in `eval'
+/Users/Omatic/.rvm/gems/ruby-2.2-head/bin/ruby_executable_hooks:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: The line was indented 2 levels deeper than the previous line.\A         on line 23 of heroes.component.sass\A \A 18:   float:  left\A 19:   width:  120px\A 20:   height: 120px\A 21: \A 22: figure\A 23:     display: inline-block\A 24:     border: 1px dotted gray\A 25:     margin: 20px\A 26: \A 27: figure img\A 28:   vertical-align: top"; }

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Hero} from '../hero';
 import {HeroService} from '../hero.service';
+import {Consumable} from '../consumable';
 
 @Component({
   selector: 'app-heroes',
@@ -17,6 +18,7 @@ export class HeroesComponent implements OnInit {
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
+    this.heroService.setSelectedHero(hero);
   }
 
   getHeroes(): void {
@@ -45,9 +47,26 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
+  addFoods(consumable: Consumable) {
+    // this.heroService.setSelectedConsumable(consumable);
+    // this.selectedHero.food.concat(consumable);
+}
+
+  clearFoods(): void {
+    this.selectedHero.food = [];
+  }
+
   ngOnInit() {
     this.getHeroes();
     this.showOptions = false;
+
+    this.heroService.getSelectedConsumable()
+      .subscribe(consumable => {
+        if (this.selectedHero) {
+          console.log(' = hero = ' + this.selectedHero + ' consumable = ' + consumable);
+          this.selectedHero.food.concat(consumable);
+        }
+    });
   }
 
 }

@@ -4,8 +4,10 @@
   <ul class="consumables">
     <li *ngFor="let consumable of consumables">
       <div [class.selected]="consumable === selectedConsumable" (click)="onSelect(consumable)">
-        <img src="{{consumable.imageSrc}}" style="height: 32px; length: 32px;">
+        <img src="{{consumable.imageSrc}}" style="height: 32px;">
       </div>
     </li>
   </ul>
 </div>
+
+<app-consumable-detail [consumable]="selectedConsumable"></app-consumable-detail>

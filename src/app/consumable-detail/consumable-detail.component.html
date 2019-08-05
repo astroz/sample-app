@@ -1,0 +1,10 @@
+<div *ngIf="consumable">
+  <h2>{{consumable.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{consumable.id}}</div>
+  <div>
+    <label>name: {{consumable.name}}
+    </label>
+  </div>
+
+  <button *ngIf="hero" (click)="addFood(consumable)">Give {{consumable.name}} to {{hero.name}}</button>
+</div>

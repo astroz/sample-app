@@ -7,7 +7,18 @@
     </label>
   </div>
 
-  <button (click)="remove()">Remove Hero</button>
+  <ul>
+    <li *ngFor="let consumable of hero.food">
+      <div class="hero-slot">
+        <figure>
+          <img src="{{consumable.imageSrc}}">
+          <figcaption style="align-content: center">{{hero.name}}</figcaption>
+        </figure>
+      </div>
+    </li>
+  </ul>
+
+  <button (click)="clearFoods()">Clear Foods</button>
 </div>
 
 

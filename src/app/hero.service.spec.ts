@@ -16,7 +16,7 @@ describe('HeroService', () => {
   });
 
   it('#getValue should return real value from the real service', () => {
-    heroService = new HeroService(new MessageService())
+    heroService = new HeroService(new MessageService());
     expect(heroService.getHeroes()).toEqual(of(HEROES));
   });
 });

@@ -32,6 +32,10 @@ export class HeroDetailComponent implements OnInit {
      // .subscribe(() => this.goBack());
   }
 
+  clearFoods(): void {
+    this.heroesComponent.clearFoods();
+  }
+
   ngOnInit() {
   }
 

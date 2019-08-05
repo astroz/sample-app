@@ -13,6 +13,9 @@ import {CONSUMABLES} from './consumables';
 })
 export class HeroService {
 
+  private selectedConsumable: Consumable;
+  private selectedHero: Hero;
+
   constructor(private messageService: MessageService) { }
 
   getHeroes(): Observable<Hero[]> {
@@ -25,6 +28,25 @@ export class HeroService {
 
   saveHeroes(heroes): void {
     localStorage.setItem('Heroes', JSON.stringify(heroes));
+  }
+
+  setSelectedHero(hero: Hero): void {
+    this.selectedHero = hero;
+    console.log('Set hero ' + hero.name);
+  }
+
+  getSelectedHero(): Observable<Hero> {
+    return of(this.selectedHero);
+  }
+
+  // Consumable Stuff
+
+  setSelectedConsumable(consumable: Consumable) {
+    this.selectedConsumable = consumable;
+  }
+
+  getSelectedConsumable(): Observable<Consumable> {
+    return of(this.selectedConsumable);
   }
 
   getConsumables(): Observable<Consumable[]> {
