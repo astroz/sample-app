@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Consumable} from '../consumable';
 import {HeroService} from '../hero.service';
+import {Hero} from '../hero';
 
 @Component({
   selector: 'app-consumables',
@@ -11,8 +12,18 @@ export class ConsumablesComponent implements OnInit {
 
   selectedConsumable: Consumable;
   consumables: Consumable[];
+  selectedHero: Hero;
 
-  constructor(private heroService: HeroService) { }
+  @Input() set hero(value: Hero) {
+    this.selectedHero = value;
+  }
+  get hero(): Hero {
+    return this.selectedHero;
+  }
+
+  constructor(private heroService: HeroService) {
+    this.heroService.selectedHeroChange.subscribe(hero => this.selectedHero = hero);
+  }
 
   getConsumables(): void {
     this.heroService.getConsumables()

@@ -54,6 +54,7 @@ export class HeroesComponent implements OnInit {
 
   clearFoods(): void {
     this.selectedHero.food = [];
+    this.saveHeroes();
   }
 
   ngOnInit() {

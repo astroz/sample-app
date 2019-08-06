@@ -32,6 +32,10 @@ export class HeroDetailComponent implements OnInit {
      // .subscribe(() => this.goBack());
   }
 
+  removeFood(): void {
+
+  }
+
   clearFoods(): void {
     this.heroesComponent.clearFoods();
   }

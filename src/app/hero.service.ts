@@ -4,7 +4,7 @@ import {MessageService} from './message.service';
 
 import {Hero} from './hero';
 import {HEROES} from './mock-heroes';
-import {Observable, of} from 'rxjs';
+import {Observable, of, Subject} from 'rxjs';
 import {Consumable} from './consumable';
 import {CONSUMABLES} from './consumables';
 
@@ -14,24 +14,42 @@ import {CONSUMABLES} from './consumables';
 export class HeroService {
 
   private selectedConsumable: Consumable;
-  private selectedHero: Hero;
 
-  constructor(private messageService: MessageService) { }
+  heroes: Hero[];
+  currentHeroes: Subject<Hero[]> = new Subject<Hero[]>();
 
-  getHeroes(): Observable<Hero[]> {
-    let heroList = JSON.parse(localStorage.getItem('Heroes'));
-    if (!heroList) { heroList = HEROES; }
+  selectedHero: Hero;
+  selectedHeroChange: Subject<Hero> = new Subject<Hero>();
 
-    this.messageService.add('HeroService: fetched heroes ');
-    return of(heroList);
+  constructor(private messageService: MessageService) {
+    this.selectedHeroChange.subscribe( hero => this.selectedHero = hero);
+    this.currentHeroes.subscribe( heroes => this.heroes = heroes);
   }
 
-  saveHeroes(heroes): void {
-    localStorage.setItem('Heroes', JSON.stringify(heroes));
+  getHeroes(): Observable<Hero[]> {
+    let heroes = [];
+
+    if (!localStorage.getItem('Heroes')) {
+      heroes = HEROES;
+    } else {
+      const heroList = JSON.parse(localStorage.getItem('Heroes'));
+      heroList.forEach(hero => {
+        heroes.push(new Hero(hero.id, hero.name, hero.type, hero.food));
+      });
+    }
+
+    this.heroes = heroes;
+    return of(heroes);
+  }
+
+  saveHeroes(heroes?: Hero[]): void {
+    if (heroes) { this.heroes = heroes; }
+    localStorage.setItem('Heroes', JSON.stringify(this.heroes));
   }
 
   setSelectedHero(hero: Hero): void {
-    this.selectedHero = hero;
+    this.selectedHeroChange.next(hero);
+    // this.selectedHero = hero;
     console.log('Set hero ' + hero.name);
   }
 
@@ -40,6 +58,12 @@ export class HeroService {
   }
 
   // Consumable Stuff
+
+  addConsumable(consumable: Consumable) {
+    console.log('adding consumable ' + consumable + ' to hero ' + this.selectedHero);
+    this.selectedHero.addFood(consumable);
+    this.saveHeroes();
+  }
 
   setSelectedConsumable(consumable: Consumable) {
     this.selectedConsumable = consumable;

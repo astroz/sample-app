@@ -16,17 +16,17 @@ import {HeroService} from '../hero.service';
 export class ConsumableDetailComponent implements OnInit {
 
   constructor(private consumablesComponent: ConsumablesComponent,
-              private heroService: HeroService) { }
+              private heroService: HeroService) {
+    this.hero = heroService.selectedHero;
+  }
 
   @Input() consumable: Consumable;
   @Input() hero: Hero;
 
   addFood(consumable: Consumable) {
-    this.consumablesComponent.addConsumable(consumable);
+    this.heroService.addConsumable(consumable);
   }
 
-  ngOnInit() {
-    this.heroService.getSelectedHero().subscribe(hero => {this.hero = hero; console.log(hero + ' selected.'); });
-  }
+  ngOnInit() { }
 
 }

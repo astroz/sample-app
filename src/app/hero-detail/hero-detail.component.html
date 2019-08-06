@@ -7,14 +7,9 @@
     </label>
   </div>
 
-  <ul>
-    <li *ngFor="let consumable of hero.food">
-      <div class="hero-slot">
-        <figure>
-          <img src="{{consumable.imageSrc}}">
-          <figcaption style="align-content: center">{{hero.name}}</figcaption>
-        </figure>
-      </div>
+  <ul class="hero-slot">
+    <li *ngFor="let consumable of hero.food" (click)="">
+      <img src="{{consumable.imageSrc}}">
     </li>
   </ul>
 

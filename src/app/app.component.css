@@ -10,7 +10,8 @@ h2, h3 {
   font-weight: lighter; }
 
 body {
-  margin: 2em; }
+  margin: 2em;
+  background: url("/assets/images/Tavern1600x1200.png") left top; }
 
 body, input[type="text"], button {
   color: #333;
