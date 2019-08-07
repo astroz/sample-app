@@ -1,11 +1,7 @@
 <h2>Hero Selection</h2>
 
-<div>
-  <button (click)="showOptions = !showOptions">Show Options</button>
-  <div *ngIf="showOptions" class="options">
-    <button (click)="loadDefaults()">Load Default Heroes</button>
-    <button (click)="clearHeroes()">Clear Heroes</button>
-  </div>
+<div class="options">
+  <button (click)="loadDefaults()">Reset Heroes</button>
 </div>
 <div class="half-screen">
 <ul class="heroes"  style="list-style: none">

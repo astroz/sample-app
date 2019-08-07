@@ -1,6 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {ConsumableDetailComponent} from './consumable-detail.component';
+import {ConsumablesComponent} from '../consumables/consumables.component';
 
 describe('ConsumableDetailComponent', () => {
   let component: ConsumableDetailComponent;
@@ -8,7 +9,8 @@ describe('ConsumableDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ConsumableDetailComponent ]
+      declarations: [ ConsumableDetailComponent ],
+      providers: [ ConsumablesComponent ]
     })
     .compileComponents();
   }));

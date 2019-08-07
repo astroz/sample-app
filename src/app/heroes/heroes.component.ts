@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Hero} from '../hero';
 import {HeroService} from '../hero.service';
-import {Consumable} from '../consumable';
 
 @Component({
   selector: 'app-heroes',
@@ -36,21 +35,10 @@ export class HeroesComponent implements OnInit {
     this.heroService.saveHeroes(this.heroes);
   }
 
-  clearHeroes(): void {
-    this.selectedHero = null;
-    this.heroes = null;
-    this.heroService.saveHeroes(this.heroes);
-  }
-
   loadDefaults(): void {
-    this.clearHeroes();
-    this.getHeroes();
+    this.heroService.clearHeroes();
+    location.reload();
   }
-
-  addFoods(consumable: Consumable) {
-    // this.heroService.setSelectedConsumable(consumable);
-    // this.selectedHero.food.concat(consumable);
-}
 
   clearFoods(): void {
     this.selectedHero.food = [];
@@ -69,5 +57,4 @@ export class HeroesComponent implements OnInit {
         }
     });
   }
-
 }

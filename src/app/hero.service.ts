@@ -47,6 +47,10 @@ export class HeroService {
     localStorage.setItem('Heroes', JSON.stringify(this.heroes));
   }
 
+  clearHeroes() {
+    localStorage.removeItem('Heroes');
+  }
+
   setSelectedHero(hero: Hero): void {
     this.selectedHeroChange.next(hero);
     // this.selectedHero = hero;

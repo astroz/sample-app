@@ -1,4 +1,4 @@
-import {Component, Input, NgModule, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ConsumablesComponent} from '../consumables/consumables.component';
 import {Consumable} from '../consumable';
 import {Hero} from '../hero';
@@ -10,9 +10,6 @@ import {HeroService} from '../hero.service';
   styleUrls: ['./consumable-detail.component.sass']
 })
 
-@NgModule({
-    providers: [ HeroService ]
-})
 export class ConsumableDetailComponent implements OnInit {
 
   constructor(private consumablesComponent: ConsumablesComponent,
